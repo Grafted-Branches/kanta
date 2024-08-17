@@ -10,7 +10,7 @@ defmodule KantaWeb.Translations.ContextLive do
     socket =
       case get_context(id) do
         {:ok, %Context{} = context} -> assign(socket, :context, context)
-        {:error, _, _reason} -> redirect(socket, to: "/kanta/contexts")
+        {:error, _, _reason} -> redirect(socket, to: dashboard_path(socket, "/contexts"))
       end
 
     {:ok, socket}

@@ -10,7 +10,7 @@ defmodule KantaWeb.Translations.DomainLive do
     socket =
       case get_domain(id) do
         {:ok, %Domain{} = domain} -> assign(socket, :domain, domain)
-        {:error, _, _reason} -> redirect(socket, to: "/kanta/domains")
+        {:error, _, _reason} -> redirect(socket, to: dashboard_path(socket, "/domains"))
       end
 
     {:ok, socket}

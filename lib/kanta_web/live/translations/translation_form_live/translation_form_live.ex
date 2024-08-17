@@ -53,7 +53,7 @@ defmodule KantaWeb.Translations.TranslationFormLive do
         |> assign(:message, message)
         |> assign(:translations, translations)
       else
-        _ -> redirect(socket, to: "/kanta/locales/#{locale_id}/translations")
+        _ -> redirect(socket, to: dashboard_path(socket, "/locales/#{locale_id}/translations"))
       end
 
     {:ok, assign(socket, :filters, Map.get(params, "filters"))}
