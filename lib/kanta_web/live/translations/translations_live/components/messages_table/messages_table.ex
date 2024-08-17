@@ -21,10 +21,9 @@ defmodule KantaWeb.Translations.Components.MessagesTable do
     {:noreply,
      push_navigate(socket,
        to:
-         unverified_path(
+         dashboard_path(
            socket,
-           Kanta.Router,
-           "/kanta/locales/#{socket.assigns.locale.id}/translations/#{id}?" <>
+           "/locales/#{socket.assigns.locale.id}/translations/#{id}?" <>
              URI.encode_query(query)
          )
      )}
